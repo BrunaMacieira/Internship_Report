@@ -1,0 +1,148 @@
+\chapter{Additional Information} \label{add_info}
+
+Here, it's presented additional information about permissionless and permissioned blockchain and consensus mechanisms.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|p{5.5cm}|p{5.5cm}|}
+\hline
+ & \textbf{Permissionless} & \textbf{Permissioned} \\
+\hline
+\textbf{Overview} & Open Network allowing anyone to interact, consensus validation, and fully decentralized & Closed Network with limited decentralization and designated parties for participation in Consensus Validation \\
+\hline
+\textbf{Also Known As} & Public, Trustless & Private, Permissioned Sandbox \\
+\hline
+\textbf{Key Attributes} & 
+\begin{itemize}
+  \item Full transparency
+  \item Development in Open Source
+  \item Mostly Anonymous
+  \item Privacy dependent on technological limitations
+  \item No Control Authority
+  \item Involves digital assets
+\end{itemize} 
+& 
+\begin{itemize}
+  \item Controlled Transparency
+  \item Development by Private entities
+  \item Not anonymous
+  \item Privacy based on governance decision
+  \item No Single authority
+  \item May or may not involve digital assets
+\end{itemize} \\
+\hline
+\textbf{Benefits} & 
+\begin{itemize}
+  \item Broader decentralization
+  \item Highly transparent
+  \item Censorship resistant
+  \item Security resilience
+\end{itemize} 
+& 
+\begin{itemize}
+  \item Incremental Decentralization
+  \item Strong privacy
+  \item Customizable
+  \item Faster and Scalable
+\end{itemize} \\
+\hline
+\textbf{Drawbacks} & 
+\begin{itemize}
+  \item Less energy efficient
+  \item Slow and difficult to scale
+  \item Less user privacy
+\end{itemize} 
+& 
+\begin{itemize}
+  \item Limited decentralization
+  \item Override risk
+  \item Less transparent
+\end{itemize} \\
+\hline
+\textbf{Market Traction} & P2P, B2C, Government to Citizens & B2B, B2C, Government to Organizations \\
+\hline
+\end{tabular}
+\captionsetup{justification=centering}
+\caption{Permissionless and Permissioned Blockchains Comparison, source: \href{https://www.blockchain-council.org/blockchain/permissioned-and-permissionless-blockchains-a-comprehensive-guide/}{Blockchain Council}}\footnotemark{}
+\label{tab:blockchain-comparison}
+\end{table}
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{2.5cm}|p{5cm}|p{5cm}|}
+\hline
+\textbf{Blockchain Type} & \textbf{Pros} & \textbf{Cons} \\
+\hline
+\multicolumn{1}{|c|}{\textbf{Permissioned}} & 
+\begin{itemize}
+  \item Risk-free participation without reliance on centralized models.
+  \item Strong privacy protection and customizable configurations.
+  \item Improved performance and scalability due to limited participants.
+\end{itemize} 
+& 
+\begin{itemize}
+  \item Higher chances of collusion and data corruption.
+  \item Difficulties in achieving consensus with potentially changeable rules.
+  \item Limited transparency for external oversight.
+\end{itemize} \\
+\hline
+\multicolumn{1}{|c|}{\textbf{Permissionless}} & 
+\begin{itemize}
+  \item Broader decentralization with high transparency and resistance to censorship.
+  \item Efficient reconciliation process and resistance to data disruption.
+\end{itemize} 
+& 
+\begin{itemize}
+  \item Lower privacy compared to permissioned blockchain.
+  \item Potential performance and scalability issues due to increased user base.
+  \item Higher energy consumption for network-wide verification.
+\end{itemize} \\
+\hline
+\end{tabular}
+\captionsetup{justification=centering}
+\caption{Pros and Cons of Permissioless and Permissioned Blockchains, source: \href{https://www.blockchain-council.org/blockchain/permissioned-and-permissionless-blockchains-a-comprehensive-guide/}{Blockchain Council}}\footnotemark[\value{footnote}]
+\label{proscons}
+\end{table}
+
+\footnotetext[1]{For more information, please consult: https://www.blockchain-council.org/blockchain/permissioned-and-permissionless-blockchains-a-comprehensive-guide/}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{3cm}|p{3.5cm}|p{3.5cm}|p{3cm}|}
+\hline
+\textbf{Consensus Mechanism} & \textbf{Advantages} & \textbf{Disadvantages} & \textbf{Protocols Using It} \\
+\hline
+Proof of Work & 
+Decentralized Structure\newline High Levels Of Security\newline Acceptable Levels Of Scalability & High Block Time\newline Energy Inefficiency\newline Hardware Dependency & Bitcoin\newline Dogecoin\newline Litecoin \\
+\hline
+Proof of Stake & 
+Fast Block Creation Time\newline High Throughput\newline Energy Efficiency\newline Scalability (But Less Than PoW)\newline Independence to Special Hardware & Suffers From Centralization\newline Lower Cost Of Misbehaving & Tezos\newline Cardano\newline Ethereum \\
+\hline
+Delegated Proof of Stake & 
+Scalability\newline Energy Efficiency\newline Low-cost Transactions & Semi-centralization\newline Highly Susceptible To 51\% Attack & EOS\newline Ark\newline Tron \\
+\hline
+Practical Byzantine Fault Tolerance & 
+Energy Efficiency\newline High Throughput & Not Scalable\newline Susceptible To Sybil Attacks & Hyperledger Fabric\newline Zilliqa \\
+\hline
+Proof Of Weight & 
+Great Customization and Scalability\newline Quick Transaction Confirmation\newline Energy Efficiency & No Incentive\newline Semi-centralization & Algorand\newline Filecoin\newline Chia \\
+\hline
+Proof Of Capacity & 
+No Special Hardware\newline More Decentralized & Susceptible To Grinding Attack\newline Space Privilege Applies & Burstcoin\newline Permacoin \\
+\hline
+Proof Of Authority & 
+Transactional Speed\newline Tighter Security & Not Decentralized\newline Breaks Anonymity & VeChain\newline Palm Network\newline Xodex \\
+\hline
+Proof of Importance & 
+Sybil Resistant\newline Prevents Hoarding & Favors The Rich\newline Little Incentives & NEM \\
+\hline
+\end{tabular}
+\captionsetup{justification=centering}
+\caption{Consensus Mechanisms in Blockchain, source: \href{https://hacken.io/discover/consensus-mechanisms/}{Hacken}}\footnotemark
+\label{tab:consensus-mechanisms}
+\end{table}
+
+\footnotetext{For more information, please consult: https://hacken.io/discover/consensus-mechanisms/}
+
+

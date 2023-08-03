@@ -1,0 +1,244 @@
+%%========================================
+%% Commands: pdflatex tese
+%%           bibtex tese
+%%           makeindex tese (only if creating an index)
+%%           pdflatex tese
+%% Alternative:
+%%          latexmk -pdf tese.tex
+%%========================================
+
+%% 2021-07-20: One-sided output by default
+\documentclass[11pt,a4paper]{report}
+%% For two-sided printing (for dead-tree output) comment previous line
+%% and uncomment the next line
+%% \documentclass[11pt,a4paper,twoside,openright]{report}
+
+%% For iso-8859-1 (latin1), comment next line and uncomment the second line
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+
+\usepackage{comment}
+\usepackage{datatool}
+
+
+% Define a convenient command to add a line
+% to the database
+\newcommand*{\addacronym}[2]{%
+  \DTLnewrow{acronyms}%
+  \DTLnewdbentry{acronyms}{Acronym}{#1}%
+  \DTLnewdbentry{acronyms}{Description}{#2}%
+}
+% formatting
+\newcommand{\tocfill}{\cleaders\hbox{$\m@th \mkern\@dotsep mu . \mkern\@dotsep mu$}\hfill}
+\newcommand{\abbrlabel}[1]{\makebox[3cm][l]{\textbf{#1}\ \tocfill}}
+\newenvironment{abbreviations}{\begin{list}{}{\renewcommand{\makelabel}{\abbrlabel}%
+\setlength{\labelwidth}{3cm}\setlength{\leftmargin}{\labelwidth\labelsep}%
+\setlength{\itemsep}{0pt}}}{\end{list}}
+
+\usepackage{natbib}
+\bibliographystyle{unsrt}
+\setcitestyle{numbers}
+
+
+
+%% English version
+
+%% MEIC options
+%\usepackage[meic]{feupteses}
+%\usepackage[meic,juri]{feupteses}
+%\usepackage[meic,final]{feupteses}
+%\usepackage[meic,final,onpaper]{feupteses}
+
+%% MEEC options
+%\usepackage[meec]{feupteses}
+%\usepackage[meec,juri]{feupteses}
+%\usepackage[meec,final]{feupteses}
+
+%% For other degrees
+\usepackage{feupteses} % you must define the degree bellow
+
+
+\usepackage{fontawesome5}
+\usepackage[most]{tcolorbox}
+
+\usepackage{tocloft}
+
+\setcounter{secnumdepth}{3}
+
+\setcounter{tocdepth}{3}
+
+%% Path to the figures directory
+%% TIP: use folder ``figures'' to keep all your figures
+\graphicspath{{figures/}}
+
+%%----------------------------------------
+%% TIP: if you want to define more macros, use an external file to keep them
+\include{mymacros}
+%%----------------------------------------
+
+%%========================================
+%% Start of document
+%%========================================
+\begin{document}
+
+%%----------------------------------------
+%% Information about the work
+%%----------------------------------------
+\title{Unleashing DeFi's Potential with Dharma Network: Fusion of Functional Programming and Algorand Blockchain}%Empowering DeFi with Dharma Network: Functional Programming teams up with Algorand Blockchain}%Functional Programming Implementation in Dharma Network- an Algorand blockchain token revolutionizing DeFi}%Backend Implementation in Dharma Network- a functional programming approach} %% or - an Algorand Blockchain reward system; used to be blockchain implementation, but i didn't do blockchain
+%% or- Dharma Network- an Algorand blockchain token revolutionizing decentralized finance
+% Empowering DeFi with Dharma Network: functional programming teams up with Algorand Blockchain 
+% Unleashing DeFi's Potential: Dharma Network's Fusion of Functional Programming and Algorand Blockchain
+\author{Bruna Raquel Noversa Macieira}
+
+%% Comment next line if not necessary for degree
+\degree{Bachelor in Computer Systems Engineering}
+
+%% Uncomment next line for date of submission
+\thesisdate{June 19, 2023}
+
+%% Comment next line copyright text if not used
+\copyrightnotice{Bruna Macieira, 2022-23}
+
+\supervisor{University Supervisor}{Prof. Luís Ferreira}
+\supervisor{Company Supervisor}{Emanuel Mota}
+
+%% Uncomment committee stuff in the final version if used
+\committeetext{Approved by:}
+\committeemember{EST's President}{Dr. Vítor Carvalho}
+\committeemember{Referee}{Prof. Luís Ferreira}
+\committeemember{Referee}{Emanuel Mota}
+
+%% Uncomment signature line in the final on paper version if used
+\signature
+
+%% Specify cover logo (in folder ``figures'')
+\logo{est_ipca_logo.png}
+
+%% Uncomment next line for additional text below the author's name (front page)
+%\additionalfronttext{Applied Project}
+
+%%----------------------------------------
+%% Preliminary materials
+%%----------------------------------------
+
+\DTLnewdb{acronyms}
+
+\addacronym{IPCA}{Instituto Politécnico do Cávado e do Ave}
+\addacronym{EST}{Escola Superior de Tecnologia}
+\addacronym{DeFi}{Decentralized Finances}
+\addacronym{DApp}{Decentralized Application}
+\addacronym{API}{Application Programming Interface}
+\addacronym{UN}{United Nations}
+\addacronym{SDG}{Sustainable Development Goals}
+\addacronym{SDK}{Software Development Kit}
+\addacronym{MVC}{Model View Controller}
+\addacronym{HTTP}{HyperText Transfer Protocol}
+\addacronym{HTML}{HyperText Markup Language}
+\addacronym{JSON}{JavaScript Object Notation}
+\addacronym{IoT}{Internet of Things}
+\addacronym{BEAM}{Bogdan/Björn's Erlang Abstract Machine}
+\addacronym{VM}{Virtual Machine}
+\addacronym{PoW}{Proof-of-Work}
+\addacronym{PPoS}{Pure Proof of Stake}
+\addacronym{VRF}{Verifiable Random Function}
+\addacronym{BBA}{Binary Byzantine Agreement}
+\addacronym{ASA}{Algorand Standard Asset}
+\addacronym{DAO}{Decentralized Autonomous Organization}
+\addacronym{QA}{Quality Assurance}
+\addacronym{ABI}{Application Binary Interface}
+\addacronym{DPoS}{Delegated Proof-of-Stake}
+\addacronym{BAT}{Basic Attention Token}
+\addacronym{REST}{Representational State Transfer}
+\addacronym{PoRW}{Proof of Real Work}
+\addacronym{AVM}{Algorand Virtual Machine}
+\addacronym{TSDB}{Time Series Database}
+\addacronym{RDBMS}{Relational Database Management System}
+\addacronym{PBFT}{Practical Byzantine Fault Tolerant}
+\addacronym{ASC1}{Algorand Smart Contract layer 1}
+\addacronym{DPoS}{Delegated Proof-of-Stake}
+
+\DTLsort*{Acronym}{acronyms}
+
+% remove unnecessary \include{} commands
+\begin{Prolog}
+  \include{abstract} % the abstract
+  \include{resumo} % the abstract
+  \include{acknows}
+  \include{quote}    % initial quotation if desired
+  \cleardoublepage
+  \pdfbookmark[0]{Table of Contents}{contents}
+  \tableofcontents
+  \setcounter{tocdepth}{3}
+  \cleardoublepage
+  \phantomsection
+
+  \pdfbookmark[0]{List of Figures}{figures}
+  \listoffigures
+  \addcontentsline{toc}{chapter}{List of Figures}
+  \cleardoublepage
+  \phantomsection
+
+  \pdfbookmark[0]{List of Tables}{tables}
+  \listoftables
+  \addcontentsline{toc}{chapter}{List of Tables}
+  \cleardoublepage
+  \phantomsection
+
+    \pdfbookmark[0]{List of Listings}{listings}
+  \lstlistoflistings
+  \addcontentsline{toc}{chapter}{List of Listings}
+  \cleardoublepage
+    \phantomsection
+% Sort the database
+% Display the contents of the database
+
+\pdfbookmark[0]{List of Abbreviations}{abbreviations}
+\addcontentsline{toc}{chapter}{List of Abbreviations}
+\chapter*{List of Abbreviations}
+\begin{abbreviations}
+
+\DTLforeach*{acronyms}{\thisAcronym=Acronym,\thisDesc=Description}%
+  {\item[\thisAcronym] \thisDesc}%
+\end{abbreviations}
+
+
+\end{Prolog}
+
+
+%%----------------------------------------
+%% Body
+%%----------------------------------------
+\StartBody
+
+%% TIP: use a separate file for each chapter
+\include{chapter1} 
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+\include{chapter5}
+\include{chapter6}
+
+%%----------------------------------------
+%% Final materials
+%%----------------------------------------
+
+%% Bibliography
+%% bibliography is in ``myrefs.bib''
+
+
+%\PrintBib{myrefs}
+
+\bibliography{Documentation/myrefs}
+
+\appendix
+\include{Documentation/groupdossier}
+\include{Documentation/appendix}
+
+
+%% Index
+%% Uncomment next command if index is required
+%% don't forget to run ``makeindex thesis'' command
+%\PrintIndex
+
+\end{document}
+
