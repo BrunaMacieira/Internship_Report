@@ -1,0 +1,158 @@
+\documentclass[a4paper,12pt,twoside]{book}
+\usepackage{lesi/lesi}
+
+\title{Unleashing DeFi's Potential with Dharma Network: Fusion of Functional Programming and Algorand Blockchain}
+\author{Bruna Raquel Noversa Macieira}
+\nrAluno{21139}
+\regimePosLaboral
+\LESI
+\date{2022/2023}
+
+%% Caso tenham mais que um orientador, colocar
+%% \orientador{Nome professor \AND Nome professor}
+\orientador{Prof. Luís Ferreira}
+
+%% comentar estas três linhas para projectos
+\empresa{Yarilabs}
+\enderecoEmpresa{Braga, Portugal}
+\supervisor{Eng. Emanuel Mota}
+
+
+\usepackage[utf8]{inputenc}
+
+\usepackage[acronym]{glossaries}
+
+\usepackage{comment}
+\usepackage{datatool}
+
+\usepackage{tcolorbox}
+\usepackage{fontawesome5}
+
+\usepackage{natbib}
+\bibliographystyle{unsrt}
+\setcitestyle{square}
+
+\usepackage{tocloft}
+
+\setcounter{secnumdepth}{3}
+
+\setcounter{tocdepth}{3}
+
+\DTLnewdb{acronyms}
+
+\newcommand{\addacronym}[2]{%
+  \DTLnewrow{acronyms}%
+  \DTLnewdbentry{acronyms}{Acronym}{#1}%
+  \DTLnewdbentry{acronyms}{Description}{#2}%
+}
+
+\addacronym{IPCA}{Instituto Politécnico do Cávado e do Ave}
+\addacronym{EST}{Escola Superior de Tecnologia}
+\addacronym{DeFi}{Decentralized Finances}
+\addacronym{DApp}{Decentralized Application}
+\addacronym{API}{Application Programming Interface}
+\addacronym{UN}{United Nations}
+\addacronym{SDG}{Sustainable Development Goals}
+\addacronym{SDK}{Software Development Kit}
+\addacronym{MVC}{Model View Controller}
+\addacronym{HTTP}{HyperText Transfer Protocol}
+\addacronym{HTML}{HyperText Markup Language}
+\addacronym{JSON}{JavaScript Object Notation}
+\addacronym{IoT}{Internet of Things}
+\addacronym{BEAM}{Bogdan/Björn's Erlang Abstract Machine}
+\addacronym{VM}{Virtual Machine}
+\addacronym{PoW}{Proof-of-Work}
+\addacronym{PPoS}{Pure Proof of Stake}
+\addacronym{VRF}{Verifiable Random Function}
+\addacronym{BBA}{Binary Byzantine Agreement}
+\addacronym{ASA}{Algorand Standard Asset}
+\addacronym{DAO}{Decentralized Autonomous Organization}
+\addacronym{QA}{Quality Assurance}
+\addacronym{ABI}{Application Binary Interface}
+\addacronym{DPoS}{Delegated Proof-of-Stake}
+\addacronym{BAT}{Basic Attention Token}
+\addacronym{REST}{Representational State Transfer}
+\addacronym{PoRW}{Proof of Real Work}
+\addacronym{AVM}{Algorand Virtual Machine}
+\addacronym{TSDB}{Time Series Database}
+\addacronym{RDBMS}{Relational Database Management System}
+\addacronym{PBFT}{Practical Byzantine Fault Tolerant}
+\addacronym{ASC1}{Algorand Smart Contract layer 1}
+\addacronym{CEO}{Chief Executive Officer}
+\addacronym{RTP}{Rádio e Televisão de Portugal}
+
+\DTLsort*{Acronym}{acronyms}
+
+\newcommand{\listofabbreviations}{%
+  \pdfbookmark[0]{List of Abbreviations}{abbreviations}% Add bookmark to the PDF
+  \addcontentsline{toc}{chapter}{List of Abbreviations}% Add entry to the Table of Contents
+  \chapter*{List of Abbreviations}% Format the heading as a chapter
+  \begin{itemize}% Start the itemize environment
+    \renewcommand{\labelitemi}{}% Remove the bullet point label (•)
+    \DTLforeach*{acronyms}{\thisAcronym=Acronym,\thisDesc=Description}{%
+      \item \textbf{\thisAcronym} \thisDesc% Print the abbreviation and description
+    }%
+  \end{itemize}% End the itemize environment
+}
+
+\begin{document}
+\frontmatter
+\maketitle  % print the title
+
+
+
+% remove unnecessary \include{} commands
+
+  \include{abstract} % the abstract
+  \include{resumo} % the abstract
+  \include{acknows}
+  \include{quote}    % initial quotation if desired
+  \cleardoublepage
+  \pdfbookmark[0]{Table of Contents}{contents}
+  \tableofcontents
+  \setcounter{tocdepth}{3}
+  \cleardoublepage
+  \phantomsection
+
+  \pdfbookmark[0]{List of Figures}{figures}
+  \listoffigures
+  \addcontentsline{toc}{chapter}{List of Figures}
+  \cleardoublepage
+  \phantomsection
+  \pdfbookmark[0]{List of Tables}{tables}
+  \listoftables
+  \addcontentsline{toc}{chapter}{List of Tables}
+  \clearpage
+  \phantomsection
+    \pdfbookmark[0]{List of Listings}{listings}
+  \lstlistoflistings
+  \addcontentsline{toc}{chapter}{List of Listings}
+  \clearpage
+    \phantomsection
+% Sort the database
+% Display the contents of the database
+
+\listofabbreviations
+
+
+
+
+
+ 
+\mainmatter
+
+\input{chap1}
+\input{chap2}
+\input{chap3}
+\input{chap4}
+\input{chap5}
+\input{chap6}
+
+
+\bibliography{biblio}
+
+\appendix
+\include{groupdossier}
+\include{appendix}
+
+\end{document}  
